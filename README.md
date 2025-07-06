@@ -1,3 +1,7 @@
+<div align='center'>
+ <img src="./src/assets/logo-tak-transparent.png" alt="Trondheim Atletklubb Logo"/>
+</div>
+
 # Trondheim Atletklubb Nettsiden
 
 ## Summary
