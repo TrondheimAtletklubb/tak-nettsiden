@@ -1,0 +1,26 @@
+.theme-toggle {
+  background: var(--background-tertiary);
+  border: 2px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  
+  &:hover {
+    background: var(--text-secondary);
+    color: var(--background-primary);
+    border-color: var(--text-secondary);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+  }
+}
