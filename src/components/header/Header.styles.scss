@@ -1,0 +1,35 @@
+.header {
+  background: var(--primary-black);
+  color: var(--primary-yellow);
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.header__logo-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header__logo {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+
+.header__title {
+  font-size: var(--font-size-8xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Mobile styles - hide title and center logo */
+@media (max-width: 768px) {
+  .header__logo-section {
+    justify-content: center;
+  }
+
+  .header__title {
+    display: none;
+  }
+}
