@@ -2,6 +2,9 @@
   background: var(--primary-black);
   color: var(--primary-yellow);
   padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo-section {
@@ -23,10 +26,14 @@
   margin: 0;
 }
 
-/* Mobile styles - hide title and center logo */
+/* Mobile styles - hide title and show burger menu */
 @media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+  }
+
   .header__logo-section {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .header__title {
