@@ -1,13 +1,13 @@
 import "./styles/main.scss";
 import "./styles/App.scss";
-import logo from "./assets/logo-tak-transparent.png";
+import Header from "./components/header/Header";
 import ThemeToggle from "./components/themeToggle/ThemeToggle";
 
 function App() {
   return (
     <div className="app">
+      <Header />
       <ThemeToggle />
-      <img src={logo} alt="TAK Logo" className="logo" />
     </div>
   );
 }
