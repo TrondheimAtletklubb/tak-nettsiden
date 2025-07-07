@@ -46,6 +46,7 @@ const Navigation = () => {
         className="navigation__burger"
         onClick={toggleMenu}
         aria-label="Toggle navigation menu"
+        aria-expanded={isMenuOpen}
       >
         {isMenuOpen ? <HiX size={40} /> : <HiMenu size={40} />}
       </button>
