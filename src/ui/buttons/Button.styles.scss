@@ -1,0 +1,112 @@
+// Shared button styles
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-size: clamp(var(--font-size-base), 4vw, var(--font-size-lg));
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  line-height: 150%;
+  transition: all var(--transition-base);
+  min-width: auto;
+  text-decoration: none;
+  border: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// ButtonHighlight - Yellow button
+.button--highlight {
+  background: var(--primary-yellow);
+  color: var(--primary-black);
+
+  &:hover:not(:disabled) {
+    background: var(--lighter-yellow);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ButtonBorder - Transparent with border
+.button--border {
+  background: transparent;
+  color: var(--primary-white);
+  border: 2px solid var(--primary-white);
+
+  &:hover:not(:disabled) {
+    background: var(--primary-white);
+    color: var(--primary-black);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ButtonNoBorder - Transparent with arrow
+.button--no-border {
+  background: transparent;
+  color: var(--primary-white);
+  border: none;
+
+  &:hover:not(:disabled) {
+    color: var(--primary-yellow);
+    transform: translateX(4px);
+  }
+
+  &:active {
+    transform: translateX(0);
+  }
+
+  .button__arrow {
+    font-size: var(--font-size-xl);
+    transition: transform var(--transition-fast);
+  }
+
+  &:hover .button__arrow {
+    transform: translateX(4px);
+  }
+}
+
+// Dark theme variant for buttons on light backgrounds
+.button--dark {
+  &.button--highlight {
+    background: var(--primary-black);
+    color: var(--primary-yellow);
+
+    &:hover:not(:disabled) {
+      background: var(--primary-yellow);
+      color: var(--primary-black);
+    }
+  }
+
+  &.button--border {
+    color: var(--primary-black);
+    border-color: var(--primary-black);
+
+    &:hover:not(:disabled) {
+      background: var(--primary-black);
+      color: var(--primary-white);
+    }
+  }
+
+  &.button--no-border {
+    color: var(--primary-black);
+
+    &:hover:not(:disabled) {
+      color: var(--primary-yellow);
+    }
+  }
+}
