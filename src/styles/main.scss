@@ -8,11 +8,6 @@ body {
     color var(--transition-base);
 }
 
-*:focus {
-  outline: 2px solid var(--primary-yellow);
-  outline-offset: 2px;
-}
-
 a {
   color: var(--text-primary);
   text-decoration: none;
