@@ -1,22 +1,21 @@
 /* Theme Variables */
 
 :root {
-  /* Light Theme Colors */
-  --primary-yellow: #FFD700;
+  --primary-yellow: #fff800;
   --primary-black: #000000;
-  --primary-white: #F5F5F7;
+  --primary-white: #f5f5f7;
 
   /* Light Theme Variables */
-  --background-primary: #F5F5F7;
-  --background-secondary: #EFEFEF;
-  --background-tertiary: #E5E5E7;
+  --background-primary: #f5f5f7;
+  --background-secondary: #efefef;
+  --background-tertiary: #e5e5e7;
 
   --text-primary: #000000;
-  --text-secondary: #6C757D;
-  --text-tertiary: #ADB5BD;
+  --text-secondary: #6c757d;
+  --text-tertiary: #adb5bd;
 
-  --border-primary: #DEE2E6;
-  --border-secondary: #E9ECEF;
+  --border-primary: #dee2e6;
+  --border-secondary: #e9ecef;
 
   --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -63,20 +62,25 @@
   --transition-fast: 0.15s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
+
+  /* Container Widths */
+  --container-max-width: 1200px;
+  --container-wide-width: 1400px;
+  --container-padding: clamp(1rem, 5vw, 5rem);
 }
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --background-primary: #1A1A1A;
-  --background-secondary: #2D2D2D;
+  --background-primary: #1a1a1a;
+  --background-secondary: #2d2d2d;
   --background-tertiary: #404040;
 
-  --text-primary: #FFFFFF;
-  --text-secondary: #B3B3B3;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
   --text-tertiary: #808080;
 
   --border-primary: #404040;
-  --border-secondary: #2D2D2D;
+  --border-secondary: #2d2d2d;
 
   --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.3);
   --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -85,31 +89,31 @@
 
 /* Force dark theme styles */
 html[data-theme="dark"] {
-  --background-primary: #1A1A1A;
-  --background-secondary: #2D2D2D;
+  --background-primary: #1a1a1a;
+  --background-secondary: #2d2d2d;
   --background-tertiary: #404040;
 
-  --text-primary: #FFFFFF;
-  --text-secondary: #B3B3B3;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
   --text-tertiary: #808080;
 
   --border-primary: #404040;
-  --border-secondary: #2D2D2D;
+  --border-secondary: #2d2d2d;
 }
 
 /* System Theme Preference - Only applies when no manual theme is set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background-primary: #1A1A1A;
-    --background-secondary: #2D2D2D;
+    --background-primary: #1a1a1a;
+    --background-secondary: #2d2d2d;
     --background-tertiary: #404040;
 
-    --text-primary: #FFFFFF;
-    --text-secondary: #B3B3B3;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
     --text-tertiary: #808080;
 
     --border-primary: #404040;
-    --border-secondary: #2D2D2D;
+    --border-secondary: #2d2d2d;
 
     --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.3);
     --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3);
