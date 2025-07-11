@@ -1,6 +1,6 @@
 /* Main SCSS file - Import all styles */
-@import "reset";
-@import "themes";
+@use "reset";
+@use "themes";
 
 /* Global styles */
 body {
