@@ -15,7 +15,7 @@ const Location = () => {
   };
 
   return (
-    <section className="locations">
+    <section id="sted" className="locations">
       <div className="container">
         <h2 className="locations__title">Finn oss</h2>
         <p className="locations__subtitle">

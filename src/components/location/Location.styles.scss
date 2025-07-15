@@ -1,6 +1,7 @@
 .locations {
   padding: var(--spacing-3xl) 0;
   background: var(--background-secondary);
+  scroll-margin-top: var(--spacing-3xl);
 
   .container {
     max-width: var(--container-max-width);
