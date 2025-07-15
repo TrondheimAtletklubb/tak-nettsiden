@@ -5,6 +5,7 @@ import Hero from "./components/hero/Hero";
 import Benefits from "./components/benefits/Benefits";
 import Location from "./components/location/Location";
 import ThemeToggle from "./components/themeToggle/ThemeToggle";
+import BackToTop from "./components/backToTop/BackToTop";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Benefits />
       <Location />
       <ThemeToggle />
+      <BackToTop />
     </div>
   );
 }
