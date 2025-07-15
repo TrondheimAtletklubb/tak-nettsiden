@@ -5,6 +5,7 @@ const Benefits = () => {
   return (
     <section className="benefits">
       <div className="container">
+        <h2 className="benefits__section-title">Fordeler med vektløfting</h2>
         <div className="benefits__grid">
           {benefits.map((benefit, index) => (
             <div key={index} className="benefits__card">
