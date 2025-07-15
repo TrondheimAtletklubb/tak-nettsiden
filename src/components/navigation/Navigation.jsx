@@ -7,10 +7,11 @@ const Navigation = () => {
   const [activeItem, setActiveItem] = useState("");
 
   const menuItems = [
-    { label: "Contact", href: "#contact" },
-    { label: "Location", href: "#location" },
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
+    { label: "Kontakt", href: "#kontakt" },
+    { label: "Sted", href: "#sted" },
+    // { label: "Tjenester", href: "#tjenester" },
+    { label: "Bli med", href: "#bli-med" },
+    { label: "Om oss", href: "#om-oss" },
   ];
 
   const handleMenuItemClick = (item) => {
