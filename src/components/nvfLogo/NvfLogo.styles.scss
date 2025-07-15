@@ -1,0 +1,84 @@
+.nvf-logo {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  left: var(--spacing-xl);
+  width: 56px;
+  height: 56px;
+  background: var(--neutral-lightest);
+  border: 2px solid var(--neutral-light);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-heavy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--transition-base);
+  transition-property: transform, box-shadow, border-color, background-color;
+  text-decoration: none;
+  overflow: hidden;
+
+  &--clicked {
+    background: var(--neutral-white);
+    border-color: #0066cc;
+    transform: scale(0.95);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: #0066cc;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-medium);
+  }
+
+  &__image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: var(--transition-fast);
+    transition-property: transform;
+  }
+
+  &:hover &__image {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    bottom: var(--spacing-lg);
+    left: var(--spacing-lg);
+    width: 50px;
+    height: 50px;
+
+    &__image {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+// Dark theme
+[data-theme="dark"] {
+  .nvf-logo {
+    background: var(--neutral-lightest);
+    border-color: var(--neutral-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    &--clicked {
+      background: var(--neutral-white);
+      border-color: #0066cc;
+      box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+    }
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+      border-color: #0066cc;
+    }
+  }
+}

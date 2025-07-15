@@ -6,6 +6,7 @@ import Benefits from "./components/benefits/Benefits";
 import Location from "./components/location/Location";
 import ThemeToggle from "./components/themeToggle/ThemeToggle";
 import BackToTop from "./components/backToTop/BackToTop";
+import NvfLogo from "./components/nvfLogo/NvfLogo";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Location />
       <ThemeToggle />
       <BackToTop />
+      <NvfLogo />
     </div>
   );
 }
