@@ -1,5 +1,5 @@
 import "./Benefits.styles.scss";
-import benefits from "./benefits";
+import benefits from "./benefitsData";
 
 const Benefits = () => {
   return (
