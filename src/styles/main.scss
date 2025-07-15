@@ -2,6 +2,9 @@
 @use "reset";
 @use "themes";
 
+/* FontAwesome */
+@import "@fortawesome/fontawesome-free/css/all.css";
+
 /* Global styles */
 body {
   transition: background-color var(--transition-base),
