@@ -1,62 +1,69 @@
 .locations {
-  padding: 4rem 0;
-  background: var(--bg-secondary);
+  padding: var(--spacing-3xl) 0;
+  background: var(--background-secondary);
 
   .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 var(--spacing-xmd);
   }
 
   &__title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
     color: var(--text-primary);
     text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 700;
+    margin-bottom: var(--spacing-xmd);
+    font-weight: var(--font-weight-bold);
+
+    @media (min-width: 769px) {
+      font-size: var(--font-size-7xl);
+    }
   }
 
   &__subtitle {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing-2xl);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: var(--line-height-relaxed);
+    opacity: 0.8;
   }
 
   &__content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 3rem;
+    gap: var(--spacing-2xl);
     align-items: start;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: var(--spacing-xl);
     }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--spacing-xl);
   }
 
   &__contact-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: var(--bg-primary);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: var(--spacing-xmd);
+    padding: var(--spacing-lg);
+    background: var(--neutral-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-heavy);
+    transition: var(--transition-base);
+    transition-property: transform, box-shadow, background-color;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     }
 
     &--clickable {
@@ -64,28 +71,29 @@
 
       &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-        background: var(--accent-color);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        background: var(--primary-yellow);
 
         h3,
         p {
-          color: white;
+          color: var(--primary-black);
         }
 
         i {
-          color: white;
+          color: var(--primary-black);
         }
       }
 
       &:active {
         transform: translateY(-2px);
+        box-shadow: var(--shadow-heavy);
       }
     }
 
     i {
-      font-size: 1.5rem;
-      color: var(--accent-color);
-      margin-top: 0.25rem;
+      font-size: var(--font-size-2xl);
+      color: var(--neutral--darkest);
+      margin-top: var(--spacing-xs);
       min-width: 24px;
     }
 
@@ -94,26 +102,28 @@
     }
 
     h3 {
-      font-size: 1.2rem;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-size: var(--font-size-xl);
+      color: var(--neutral--darkest);
+      margin-bottom: var(--spacing-sm);
+      font-weight: var(--font-weight-semibold);
     }
 
     p {
-      color: var(--text-secondary);
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
+      color: var(--neutral--darker);
+      margin-bottom: var(--spacing-sm);
+      line-height: var(--line-height-normal);
+      font-size: var(--font-size-base);
     }
 
     a {
-      color: var(--accent-color);
+      color: var(--neutral--darkest);
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      font-weight: var(--font-weight-medium);
+      transition: var(--transition-fast);
+      transition-property: color, text-decoration;
 
       &:hover {
-        color: var(--accent-hover);
+        color: var(--neutral--darker);
         text-decoration: underline;
       }
     }
@@ -121,10 +131,11 @@
 
   &__map-container {
     position: relative;
-    height: 400px;
-    border-radius: 12px;
+    height: 100%;
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-heavy);
+    background: var(--neutral-light);
 
     @media (max-width: 768px) {
       height: 300px;
@@ -136,7 +147,8 @@
     height: 100%;
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: var(--transition-base);
+    transition-property: transform;
 
     &:hover {
       transform: scale(1.02);
@@ -144,7 +156,8 @@
 
     iframe {
       filter: grayscale(20%);
-      transition: filter 0.3s ease;
+      transition: var(--transition-base);
+      transition-property: filter;
     }
 
     &:hover iframe {
@@ -158,11 +171,12 @@
     left: 0;
     right: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    padding: 1rem;
-    color: white;
+    padding: var(--spacing-xmd);
+    color: var(--neutral-white);
     text-align: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: var(--transition-base);
+    transition-property: opacity;
 
     .locations__map:hover & {
       opacity: 1;
@@ -170,21 +184,61 @@
 
     p {
       margin: 0;
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
     }
   }
 }
 
 // Dark theme adjustments
 [data-theme="dark"] {
-  .locationss {
+  .locations {
     &__contact-item {
-      background: var(--bg-tertiary);
+      background: var(--neutral--dark);
+
+      i {
+        color: var(--primary-yellow);
+      }
+
+      h3 {
+        color: var(--neutral-white);
+      }
+
+      p {
+        color: var(--neutral-lightest);
+      }
+
+      a {
+        color: var(--primary-yellow);
+
+        &:hover {
+          color: var(--light-yellow);
+        }
+      }
 
       &:hover {
-        box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
       }
+
+      &--clickable {
+        &:hover {
+          background: var(--primary-yellow);
+          box-shadow: 0 12px 30px rgba(255, 248, 0, 0.3);
+
+          h3,
+          p {
+            color: var(--primary-black);
+          }
+
+          i {
+            color: var(--primary-black);
+          }
+        }
+      }
+    }
+
+    &__map-container {
+      background: var(--neutral--dark);
     }
 
     &__map {
