@@ -38,7 +38,7 @@ const Location = () => {
             <div className="locations__contact-item">
               <i className="fas fa-phone"></i>
               <div>
-                <h3>Organisasjonsnummer</h3>
+                <h3>Telefon</h3>
                 <a href="tel:+4712345678">+47 123 45 678</a>
               </div>
             </div>
