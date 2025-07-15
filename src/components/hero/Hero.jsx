@@ -18,14 +18,14 @@ const Hero = () => {
       />
       <div className="hero__overlay"></div>
       <div className="hero__content">
-        <h1 className="hero__title">Finn Styrken Din Hos Oss</h1>
+        <h1 className="hero__title">Finn styrken din hos oss</h1>
         <p className="hero__subtitle">
-          Trygt, sosialt og lærerik vektløfting treningsmiljø for alle i
+          Trygt, sosialt og lærerikt treningsmiljø i vektløfting for alle i
           Trondheims sentrum.
         </p>
         <div className="hero__buttons">
           <ButtonHighlight>bli medlem</ButtonHighlight>
-          <ButtonBorder>learn more</ButtonBorder>
+          <ButtonBorder>lær mer</ButtonBorder>
         </div>
       </div>
     </section>
