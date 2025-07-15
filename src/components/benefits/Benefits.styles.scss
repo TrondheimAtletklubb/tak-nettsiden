@@ -36,7 +36,7 @@
 
   i {
     font-size: var(--font-size-4xl);
-    color: var(--neutral--darkest);
+    color: var(--neutral-darkest);
   }
 }
 
@@ -48,14 +48,14 @@
 .benefits__title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--neutral--darkest);
+  color: var(--neutral-darkest);
   margin-bottom: var(--spacing-md);
   line-height: var(--line-height-tight);
 }
 
 .benefits__description {
   font-size: var(--font-size-base);
-  color: var(--neutral--darker);
+  color: var(--neutral-darker);
   line-height: var(--line-height-relaxed);
   margin: 0;
 }
@@ -71,7 +71,7 @@
 
 /* Dark theme styles */
 [data-theme="dark"] .benefits__card {
-  background: var(--neutral--dark);
+  background: var(--neutral-dark);
   border-color: var(--background-primary);
 }
 

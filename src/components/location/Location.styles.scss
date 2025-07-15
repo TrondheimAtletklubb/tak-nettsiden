@@ -93,7 +93,7 @@
 
     i {
       font-size: var(--font-size-2xl);
-      color: var(--neutral--darkest);
+      color: var(--neutral-darkest);
       margin-top: var(--spacing-xs);
       min-width: 24px;
     }
@@ -104,27 +104,27 @@
 
     h3 {
       font-size: var(--font-size-xl);
-      color: var(--neutral--darkest);
+      color: var(--neutral-darkest);
       margin-bottom: var(--spacing-sm);
       font-weight: var(--font-weight-semibold);
     }
 
     p {
-      color: var(--neutral--darker);
+      color: var(--neutral-darker);
       margin-bottom: var(--spacing-sm);
       line-height: var(--line-height-normal);
       font-size: var(--font-size-base);
     }
 
     a {
-      color: var(--neutral--darkest);
+      color: var(--neutral-darkest);
       text-decoration: none;
       font-weight: var(--font-weight-medium);
       transition: var(--transition-fast);
       transition-property: color, text-decoration;
 
       &:hover {
-        color: var(--neutral--darker);
+        color: var(--neutral-darker);
         text-decoration: underline;
       }
     }
@@ -195,7 +195,7 @@
 [data-theme="dark"] {
   .locations {
     &__contact-item {
-      background: var(--neutral--dark);
+      background: var(--neutral-dark);
 
       i {
         color: var(--primary-yellow);
@@ -239,7 +239,7 @@
     }
 
     &__map-container {
-      background: var(--neutral--dark);
+      background: var(--neutral-dark);
     }
 
     &__map {
