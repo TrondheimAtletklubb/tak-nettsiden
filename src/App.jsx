@@ -4,7 +4,6 @@ import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Benefits from "./components/benefits/Benefits";
 import Location from "./components/location/Location";
-import ThemeToggle from "./components/themeToggle/ThemeToggle";
 import BackToTop from "./components/backToTop/BackToTop";
 import NvfLogo from "./components/nvfLogo/NvfLogo";
 
@@ -15,7 +14,6 @@ function App() {
       <Hero />
       <Benefits />
       <Location />
-      <ThemeToggle />
       <BackToTop />
       <NvfLogo />
     </div>

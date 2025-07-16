@@ -1,5 +1,6 @@
 import logo from "../../assets/logo-tak-transparent.png";
 import Navigation from "../navigation/Navigation";
+import ThemeToggle from "../themeToggle/ThemeToggle";
 import "./Header.styles.scss";
 
 const Header = () => {
@@ -9,7 +10,10 @@ const Header = () => {
         <img src={logo} alt="TAK Logo" className="header__logo" />
         <h1 className="header__title">TRONDHEIM ATLETKLUBB</h1>
       </div>
-      <Navigation />
+      <div className="header__controls">
+        <Navigation />
+        <ThemeToggle />
+      </div>
     </header>
   );
 };
