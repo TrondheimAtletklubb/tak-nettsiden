@@ -17,8 +17,7 @@
   visibility: hidden;
   transform: translateY(20px);
   transition: var(--transition-base);
-  transition-property: opacity, visibility, transform, background-color,
-    box-shadow;
+  transition-property: opacity, transform, background-color, box-shadow;
 
   &--visible {
     opacity: 1;
