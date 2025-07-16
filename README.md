@@ -4,6 +4,8 @@
 
 # Trondheim Atletklubb Nettsiden
 
+[Besøk nettsiden](https://trondheimatletklubb.github.io/tak-nettsiden/)
+
 ## Summary
 
 Denne nettsiden gir informasjon om Trondheim Atletklubb. Fase én viser:
