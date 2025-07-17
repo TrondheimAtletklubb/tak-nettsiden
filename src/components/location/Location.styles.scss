@@ -31,6 +31,10 @@
     margin-right: auto;
     line-height: var(--line-height-relaxed);
     opacity: 0.8;
+
+    @media (min-width: 769px) {
+      font-size: var(--font-size-xl);
+    }
   }
 
   &__content {

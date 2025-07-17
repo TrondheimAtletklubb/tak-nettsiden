@@ -28,6 +28,10 @@ const Contact = () => {
     <section id="kontakt" className="contact">
       <div className="container">
         <h2 className="contact__title">Kontakt oss</h2>
+        <p className="contact__subtitle">
+          Ta kontakt hvis du har spørsmål eller bekymringer. Vi gleder oss til å
+          komme i kontakt med deg.
+        </p>
 
         <div className="contact__content">
           <div className="contact__info">
