@@ -12,6 +12,9 @@ const Contact = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,9 +22,41 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    // Netlify handles the form submission
-    // The form will redirect to a thank you page or show a success message
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Submit form to Netlify form handler
+      await fetch("https://tak-forms.netlify.app/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData }),
+      });
+
+      setSubmitStatus("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -132,9 +167,27 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="contact__submit-btn">
-                Send melding
+              <button
+                type="submit"
+                className="contact__submit-btn"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sender..." : "Send melding"}
               </button>
+
+              {submitStatus === "success" && (
+                <div className="contact__message contact__message--success">
+                  <i className="fas fa-check-circle"></i>
+                  Takk for din melding! Vi kommer tilbake til deg snart.
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="contact__message contact__message--error">
+                  <i className="fas fa-exclamation-circle"></i>
+                  Noe gikk galt. Vennligst prøv igjen eller kontakt oss direkte.
+                </div>
+              )}
             </form>
           </div>
         </div>
