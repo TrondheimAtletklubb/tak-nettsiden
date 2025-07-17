@@ -1,7 +1,9 @@
+import { takInfoData } from "../../data/takInfoData";
+import { InfoCard } from "../../ui/cards";
 import "./Location.styles.scss";
 
 const Location = () => {
-  const address = "Mellomveien 5, 7067 Trondheim, Norway";
+  const address = takInfoData.sted;
   const mapUrl = "https://maps.app.goo.gl/MhtfakC5fx2b4sfa7";
   const directionsUrl =
     "https://www.google.com/maps/dir//Trondheim+Atletklubb,+Mellomveien+5,+7067+Trondheim,+Norway/@63.4377478,10.4303218,690m/data=!3m1!1e3!4m9!4m8!1m0!1m5!1m1!1s0x466d31003d97f87f:0x5a1182235900f0f7!2m2!1d10.4304247!2d63.4377513!3e0?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D";
@@ -25,49 +27,34 @@ const Location = () => {
 
         <div className="locations__content">
           <div className="locations__info">
-            <div className="locations__contact-item">
-              <i className="fas fa-envelope"></i>
-              <div>
-                <h3>E-posten</h3>
-                <a href="mailto:info@takweightlifting.org">
-                  info@takweightlifting.org
-                </a>
-              </div>
-            </div>
+            <InfoCard
+              icon="fas fa-envelope"
+              title="E-post"
+              link={`mailto:${takInfoData.epost}`}
+              linkText={takInfoData.epost}
+            />
 
-            <div className="locations__contact-item">
-              <i className="fas fa-phone"></i>
-              <div>
-                <h3>Telefon</h3>
-                <a href="tel:+4712345678">+47 123 45 678</a>
-              </div>
-            </div>
+            <InfoCard
+              icon="fas fa-phone"
+              title="Telefon"
+              link={`tel:${takInfoData.telefon.replace(/\s/g, "")}`}
+              linkText={takInfoData.telefon}
+            />
 
-            <div className="locations__contact-item">
-              <i className="fas fa-map-marker-alt"></i>
-              <div>
-                <h3>Sted</h3>
-                <p>{address}</p>
-              </div>
-            </div>
+            <InfoCard
+              icon="fas fa-map-marker-alt"
+              title="Sted"
+              content={address}
+            />
 
-            <div
-              className="locations__contact-item locations__contact-item--clickable"
+            <InfoCard
+              icon="fas fa-directions"
+              title="Veibeskrivelse"
+              content="Få veibeskrivelse direkte til lokalet vårt"
+              isClickable={true}
               onClick={handleDirectionsClick}
-              role="button"
-              tabIndex="0"
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleDirectionsClick();
-                }
-              }}
-            >
-              <i className="fas fa-directions"></i>
-              <div>
-                <h3>Veibeskrivelse</h3>
-                <p>Få veibeskrivelse direkte til lokalet vårt</p>
-              </div>
-            </div>
+              className="locations__directions-card"
+            />
           </div>
 
           <div className="locations__map-container">
