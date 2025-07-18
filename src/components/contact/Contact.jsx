@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 import { takInfoData } from "../../data/takInfoData";
 import { InfoCard } from "../../ui/cards";
 import "./Contact.styles.scss";
@@ -14,6 +16,8 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
+  const [captchaValue, setCaptchaValue] = useState(null);
+  const recaptchaRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -22,12 +26,8 @@ const Contact = () => {
     });
   };
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
   };
 
   const handleSubmit = async (e) => {
@@ -35,13 +35,31 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    // Check if captcha is completed
+    if (!captchaValue) {
+      setSubmitStatus("captcha_error");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const formSubmissionUrl = import.meta.env.VITE_FORM_SUBMISSION_URL || "https://tak-forms.netlify.app/";
-      await fetch(formSubmissionUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...formData }),
-      });
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Trondheim Atletklubb",
+        reply_to: formData.email,
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSubmitStatus("success");
       setFormData({
@@ -51,6 +69,8 @@ const Contact = () => {
         subject: "",
         message: "",
       });
+      setCaptchaValue(null);
+      recaptchaRef.current?.reset();
     } catch (error) {
       console.error("Form submission failed:", error);
       setSubmitStatus("error");
@@ -82,7 +102,7 @@ const Contact = () => {
               icon="fas fa-phone"
               title="Telefon"
               content="Ring oss når som helst"
-              link={`tel:${takInfoData.telefon.replace(/\s/g, "")}`}
+              link={`tel:${takInfoData.telefon.replace(/\\s/g, "")}`}
               linkText={takInfoData.telefon}
             />
 
@@ -95,15 +115,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="contact__form-container">
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              onSubmit={handleSubmit}
-              className="contact__form"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-
+            <form onSubmit={handleSubmit} className="contact__form">
               <div className="contact__form-row">
                 <div className="contact__form-group">
                   <label htmlFor="firstName">Fornavn</label>
@@ -167,10 +179,20 @@ const Contact = () => {
                 ></textarea>
               </div>
 
+              {/* reCAPTCHA */}
+              <div className="contact__form-group contact__captcha">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                  onChange={handleCaptchaChange}
+                  theme="light"
+                />
+              </div>
+
               <button
                 type="submit"
                 className="contact__submit-btn"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !captchaValue}
               >
                 {isSubmitting ? "Sender..." : "Send melding"}
               </button>
@@ -186,6 +208,13 @@ const Contact = () => {
                 <div className="contact__message contact__message--error">
                   <i className="fas fa-exclamation-circle"></i>
                   Noe gikk galt. Vennligst prøv igjen eller kontakt oss direkte.
+                </div>
+              )}
+
+              {submitStatus === "captcha_error" && (
+                <div className="contact__message contact__message--error">
+                  <i className="fas fa-exclamation-circle"></i>
+                  Vennligst bekreft at du ikke er en robot ved å fylle ut reCAPTCHA.
                 </div>
               )}
             </form>
