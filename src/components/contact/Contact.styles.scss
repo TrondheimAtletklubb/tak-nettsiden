@@ -124,6 +124,24 @@
     }
   }
 
+  &__captcha {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    .g-recaptcha {
+      transform: scale(0.9);
+      transform-origin: 0 0;
+
+      @media (max-width: 768px) {
+        transform: scale(0.77);
+      }
+    }
+  }
+
   &__submit-btn {
     background: var(--primary-yellow);
     color: var(--neutral-darkest);
