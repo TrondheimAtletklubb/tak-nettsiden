@@ -36,8 +36,8 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      // Submit form to Netlify form handler
-      await fetch("https://tak-forms.netlify.app/", {
+      const formSubmissionUrl = import.meta.env.VITE_FORM_SUBMISSION_URL || "https://tak-forms.netlify.app/";
+      await fetch(formSubmissionUrl, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formData }),

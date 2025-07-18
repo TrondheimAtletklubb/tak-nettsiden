@@ -7,7 +7,7 @@
   [headers.values]
     Access-Control-Allow-Origin = "https://trondheimatletklubb.github.io"
     Access-Control-Allow-Methods = "POST, OPTIONS"
-     Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Headers = "Content-Type"
 
 # Redirect after successful form submission
 [[redirects]]

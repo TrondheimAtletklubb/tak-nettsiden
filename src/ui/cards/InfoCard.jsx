@@ -42,7 +42,11 @@ const InfoCard = ({
         {subtitle && <p className="info-card__subtitle">{subtitle}</p>}
         {content && <p className="info-card__content">{content}</p>}
         {link && linkText && (
-          <a href={link} onClick={(e) => isClickable && e.stopPropagation()}>
+          <a
+            id="info-card-link"
+            href={link}
+            onClick={(e) => isClickable && e.stopPropagation()}
+          >
             {linkText}
           </a>
         )}
