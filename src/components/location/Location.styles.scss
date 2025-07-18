@@ -95,6 +95,16 @@
     }
   }
 
+  &__map-click-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+
   &__map-overlay {
     position: absolute;
     bottom: 0;
@@ -107,6 +117,8 @@
     opacity: 0;
     transition: var(--transition-base);
     transition-property: opacity;
+    z-index: 3;
+    pointer-events: none;
 
     .locations__map:hover & {
       opacity: 1;

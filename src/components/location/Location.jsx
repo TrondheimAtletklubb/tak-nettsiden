@@ -73,12 +73,13 @@ const Location = () => {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1879.5447089524944!2d10.428333516236227!3d63.43774783536707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d31003d97f87f%3A0x5a1182235900f0f7!2sTrondheim%20Atletklubb!5e0!3m2!1sen!2sno!4v1642086743234!5m2!1sen!2sno"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Trondheim Atletklubb Location"
               ></iframe>
+              <div className="locations__map-click-overlay"></div>
               <div className="locations__map-overlay">
                 <p>
                   Trykk på kartet for å åpne i Google Maps og få veibeskrivelse
