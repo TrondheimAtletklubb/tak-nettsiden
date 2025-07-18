@@ -3,11 +3,6 @@
   padding: var(--spacing-3xl) 0;
   scroll-margin-top: var(--spacing-3xl);
 
-  .container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-xmd);
-  }
 
   &__title {
     font-size: var(--font-size-4xl);
@@ -57,18 +52,9 @@
     .info-card {
       flex: 1;
     }
+
   }
 
-  &__form-container {
-    background: var(--neutral-light);
-    padding: var(--spacing-2xl);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-heavy);
-
-    @media (max-width: 768px) {
-      padding: var(--spacing-xl);
-    }
-  }
 
   &__form {
     display: flex;
@@ -128,13 +114,9 @@
     display: flex;
     justify-content: center;
 
-    @media (max-width: 768px) {
-      justify-content: flex-start;
-    }
-
     .g-recaptcha {
       transform: scale(0.9);
-      transform-origin: 0 0;
+      transform-origin: center center;
 
       @media (max-width: 768px) {
         transform: scale(0.77);
@@ -204,7 +186,7 @@
   }
 
   @media (max-width: 768px) {
-    padding: var(--spacing-3xl) var(--spacing-md);
+    padding: var(--spacing-2xl) 0 calc(var(--spacing-2xl) + 120px);
   }
 }
 
@@ -213,10 +195,6 @@
   .contact {
     background: var(--background-primary);
 
-    &__form-container {
-      background: var(--neutral-dark);
-      border-color: var(--neutral-medium);
-    }
 
     &__form-group {
       label {

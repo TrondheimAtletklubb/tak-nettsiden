@@ -2,8 +2,8 @@
   position: fixed;
   bottom: var(--spacing-xl);
   left: var(--spacing-xl);
-  width: 56px;
-  height: 56px;
+  width: 84px;
+  height: 84px;
   background: var(--neutral-lightest);
   border: 2px solid var(--neutral-light);
   border-radius: var(--radius-full);
@@ -39,8 +39,8 @@
   }
 
   &__image {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     transition: var(--transition-fast);
     transition-property: transform;

@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import { takInfoData } from "../../data/takInfoData";
 import { InfoCard } from "../../ui/cards";
+import { ButtonHighlight } from "../../ui/buttons";
 import "./Contact.styles.scss";
 
 const Contact = () => {
@@ -114,7 +115,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="contact__form-container">
+          <div className="contact__form-wrapper">
             <form onSubmit={handleSubmit} className="contact__form">
               <div className="contact__form-row">
                 <div className="contact__form-group">
@@ -189,13 +190,12 @@ const Contact = () => {
                 />
               </div>
 
-              <button
+              <ButtonHighlight
                 type="submit"
-                className="contact__submit-btn"
                 disabled={isSubmitting || !captchaValue}
               >
                 {isSubmitting ? "Sender..." : "Send melding"}
-              </button>
+              </ButtonHighlight>
 
               {submitStatus === "success" && (
                 <div className="contact__message contact__message--success">
