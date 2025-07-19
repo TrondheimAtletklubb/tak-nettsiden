@@ -17,7 +17,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [captchaValue, setCaptchaValue] = useState(null);
   const recaptchaRef = useRef(null);
 
@@ -45,12 +45,10 @@ const Contact = () => {
     }
 
     try {
-      // EmailJS configuration from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // Prepare template parameters
       const templateParams = {
         from_name: `${formData.firstName} ${formData.lastName}`,
         from_email: formData.email,
@@ -60,7 +58,6 @@ const Contact = () => {
         reply_to: formData.email,
       };
 
-      // Send email using EmailJS
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSubmitStatus("success");
