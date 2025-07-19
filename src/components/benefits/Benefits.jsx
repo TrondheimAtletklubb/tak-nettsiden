@@ -1,12 +1,15 @@
 import "./Benefits.styles.scss";
 import benefits from "./benefitsData";
+import { Section } from "../../ui/sections";
 
 const Benefits = () => {
   return (
-    <section className="benefits">
-      <div className="container">
-        <h2 className="benefits__section-title">Fordeler med vektløfting</h2>
-        <div className="benefits__grid">
+    <Section
+      className="benefits"
+      background="neutral"
+      title="Fordeler med vektløfting"
+    >
+      <div className="benefits__grid">
           {benefits.map((benefit, index) => (
             <div key={index} className="benefits__card">
               <div className="benefits__icon">
@@ -17,8 +20,7 @@ const Benefits = () => {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+    </Section>
   );
 };
 

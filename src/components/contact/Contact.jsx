@@ -4,6 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { takInfoData } from "../../data/takInfoData";
 import { InfoCard } from "../../ui/cards";
 import { ButtonHighlight } from "../../ui/buttons";
+import { Section } from "../../ui/sections";
 import "./Contact.styles.scss";
 
 const Contact = () => {
@@ -16,7 +17,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [captchaValue, setCaptchaValue] = useState(null);
   const recaptchaRef = useRef(null);
 
@@ -44,12 +45,10 @@ const Contact = () => {
     }
 
     try {
-      // EmailJS configuration from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // Prepare template parameters
       const templateParams = {
         from_name: `${formData.firstName} ${formData.lastName}`,
         from_email: formData.email,
@@ -59,7 +58,6 @@ const Contact = () => {
         reply_to: formData.email,
       };
 
-      // Send email using EmailJS
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSubmitStatus("success");
@@ -81,15 +79,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="kontakt" className="contact">
-      <div className="contact__container">
-        <h2 className="contact__title">Kontakt oss</h2>
-        <p className="contact__subtitle">
-          Ta kontakt hvis du har spørsmål eller bekymringer. Vi gleder oss til å
-          komme i kontakt med deg.
-        </p>
-
-        <div className="contact__content">
+    <Section
+      id="kontakt"
+      className="contact"
+      background="neutral"
+      title="Kontakt oss"
+      subtitle="Ta kontakt hvis du har spørsmål eller bekymringer. Vi gleder oss til å komme i kontakt med deg."
+    >
+      <div className="contact__content">
           <div className="contact__info">
             <InfoCard
               icon="fas fa-envelope"
@@ -220,8 +217,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 };
 
