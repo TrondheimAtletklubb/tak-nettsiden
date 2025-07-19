@@ -1,8 +1,13 @@
 .contact {
-  background: var(--neutral);
   padding: var(--spacing-3xl) 0;
+  background: var(--neutral);
   scroll-margin-top: var(--spacing-3xl);
 
+  &__container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xmd);
+  }
 
   &__title {
     font-size: var(--font-size-4xl);
@@ -48,13 +53,16 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    width: 100%;
 
     .info-card {
       flex: 1;
     }
-
   }
 
+  &__form-wrapper {
+    width: 100%;
+  }
 
   &__form {
     display: flex;
@@ -194,7 +202,6 @@
 [data-theme="dark"] {
   .contact {
     background: var(--background-primary);
-
 
     &__form-group {
       label {
