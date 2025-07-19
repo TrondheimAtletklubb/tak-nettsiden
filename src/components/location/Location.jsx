@@ -1,5 +1,6 @@
 import { takInfoData } from "../../data/takInfoData";
 import { InfoCard } from "../../ui/cards";
+import { Section } from "../../ui/sections";
 import "./Location.styles.scss";
 
 const Location = () => {
@@ -17,15 +18,14 @@ const Location = () => {
   };
 
   return (
-    <section id="sted" className="locations">
-      <div className="container">
-        <h2 className="locations__title">Finn oss</h2>
-        <p className="locations__subtitle">
-          Klikk på kartet for å få veibeskrivelse på mobil eller i nettleseren
-          din.
-        </p>
-
-        <div className="locations__content">
+    <Section
+      id="sted"
+      className="locations"
+      background="secondary"
+      title="Finn oss"
+      subtitle="Klikk på kartet for å få veibeskrivelse på mobil eller i nettleseren din."
+    >
+      <div className="locations__content">
           <div className="locations__info">
             <InfoCard
               icon="fas fa-envelope"
@@ -88,8 +88,7 @@ const Location = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 };
 

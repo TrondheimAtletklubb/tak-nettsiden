@@ -4,6 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { takInfoData } from "../../data/takInfoData";
 import { InfoCard } from "../../ui/cards";
 import { ButtonHighlight } from "../../ui/buttons";
+import { Section } from "../../ui/sections";
 import "./Contact.styles.scss";
 
 const Contact = () => {
@@ -81,15 +82,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="kontakt" className="contact">
-      <div className="contact__container">
-        <h2 className="contact__title">Kontakt oss</h2>
-        <p className="contact__subtitle">
-          Ta kontakt hvis du har spørsmål eller bekymringer. Vi gleder oss til å
-          komme i kontakt med deg.
-        </p>
-
-        <div className="contact__content">
+    <Section
+      id="kontakt"
+      className="contact"
+      background="neutral"
+      title="Kontakt oss"
+      subtitle="Ta kontakt hvis du har spørsmål eller bekymringer. Vi gleder oss til å komme i kontakt med deg."
+    >
+      <div className="contact__content">
           <div className="contact__info">
             <InfoCard
               icon="fas fa-envelope"
@@ -220,8 +220,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 };
 
