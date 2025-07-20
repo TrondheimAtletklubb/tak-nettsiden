@@ -9,7 +9,7 @@ const Pricing = () => {
       className="pricing"
       background="neutral"
       title="Medlemsskap og priser"
-      subtitle="Følgende medlems- og treningskontingenter gjelder for 2018 og 2019:"
+      subtitle="Følgende medlems- og treningskontingenter gjelder for inneværende år:"
     >
       <div className="pricing__content">
         <div className="pricing__info">
