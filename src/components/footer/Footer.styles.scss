@@ -169,7 +169,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--spacing-lg);
     align-items: center;
-    padding: 0 120px; /* Add padding to avoid floating icons */
+    padding: 0 calc(var(--spacing-3xl) + var(--spacing-2xl)); /* Add padding to avoid floating icons */
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
