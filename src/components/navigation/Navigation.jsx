@@ -8,9 +8,8 @@ const Navigation = () => {
 
   const menuItems = [
     { label: "Kontakt", href: "#kontakt" },
-    { label: "Priser", href: "#priser" },
     { label: "Sted", href: "#sted" },
-    { label: "Bli med", href: "#bli-med" },
+    { label: "Bli med", href: "#priser" },
     { label: "Om oss", href: "#om-oss" },
   ];
 
