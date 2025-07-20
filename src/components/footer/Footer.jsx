@@ -1,9 +1,21 @@
+import { useState } from "react";
 import { takInfoData } from "../../data/takInfoData";
 import { navigationItems } from "../../data/navigation";
+import LegalModal from "../legalModal/LegalModal";
 import "./Footer.styles.scss";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [activeModal, setActiveModal] = useState(null);
+
+  const handleLegalLinkClick = (e, contentType) => {
+    e.preventDefault();
+    setActiveModal(contentType);
+  };
+
+  const closeModal = () => {
+    setActiveModal(null);
+  };
 
   return (
     <footer className="footer">
@@ -97,19 +109,37 @@ const Footer = () => {
 
           <div className="footer__bottom-right">
             <div className="footer__legal">
-              <a href="#privacy" className="footer__legal-link">
+              <a
+                href="#privacy"
+                className="footer__legal-link"
+                onClick={(e) => handleLegalLinkClick(e, "privacyPolicy")}
+              >
                 Privacy Policy
               </a>
-              <a href="#terms" className="footer__legal-link">
+              <a
+                href="#terms"
+                className="footer__legal-link"
+                onClick={(e) => handleLegalLinkClick(e, "termsOfUse")}
+              >
                 Terms of Use
               </a>
-              <a href="#cookies" className="footer__legal-link">
+              <a
+                href="#cookies"
+                className="footer__legal-link"
+                onClick={(e) => handleLegalLinkClick(e, "cookiePolicy")}
+              >
                 Cookie Policy
               </a>
             </div>
           </div>
         </div>
       </div>
+
+      <LegalModal
+        isOpen={!!activeModal}
+        onClose={closeModal}
+        contentType={activeModal}
+      />
     </footer>
   );
 };
