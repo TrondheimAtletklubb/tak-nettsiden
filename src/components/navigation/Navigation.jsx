@@ -1,17 +1,12 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { navigationItems } from "../../data/navigation";
 import "./Navigation.styles.scss";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("");
 
-  const menuItems = [
-    { label: "Kontakt", href: "#kontakt" },
-    { label: "Sted", href: "#sted" },
-    { label: "Bli med", href: "#priser" },
-    { label: "Om oss", href: "#om-oss" },
-  ];
 
   const handleMenuItemClick = (item) => {
     setActiveItem(item.label);
@@ -26,8 +21,8 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <ul className="navigation__menu navigation__menu--desktop">
-        {menuItems.map((item) => (
-          <li key={item.label} className="navigation__item">
+        {navigationItems.map((item) => (
+          <li key={item.id} className="navigation__item">
             <a
               href={item.href}
               className={`navigation__link ${
@@ -56,8 +51,8 @@ const Navigation = () => {
           isMenuOpen ? "navigation__menu--open" : ""
         }`}
       >
-        {menuItems.map((item) => (
-          <li key={item.label} className="navigation__item">
+        {navigationItems.map((item) => (
+          <li key={item.id} className="navigation__item">
             <a
               href={item.href}
               className={`navigation__link ${
