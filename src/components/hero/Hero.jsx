@@ -4,6 +4,14 @@ import { ButtonHighlight, ButtonBorder } from "../../ui/buttons";
 import "./Hero.styles.scss";
 
 const Hero = () => {
+  const handleLearnMore = () => {
+    document.getElementById("priser")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleBliMedlem = () => {
+    window.open("https://www.facebook.com/Atletklubben");
+  };
+
   return (
     <section className="hero">
       <img
@@ -24,8 +32,12 @@ const Hero = () => {
           Trondheims sentrum.
         </p>
         <div className="hero__buttons">
-          <ButtonHighlight>bli medlem</ButtonHighlight>
-          <ButtonBorder>lær mer</ButtonBorder>
+          <ButtonHighlight type="button" onClick={handleBliMedlem}>
+            bli medlem
+          </ButtonHighlight>
+          <ButtonBorder type="button" onClick={handleLearnMore}>
+            lær mer
+          </ButtonBorder>
         </div>
       </div>
     </section>

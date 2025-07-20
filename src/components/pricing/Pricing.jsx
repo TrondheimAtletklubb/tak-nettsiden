@@ -5,6 +5,10 @@ import { membershipPricing } from "../../data/pricingData";
 import "./Pricing.styles.scss";
 
 const Pricing = () => {
+  const handleBliMedlem = () => {
+    window.open("https://www.facebook.com/Atletklubben");
+  };
+
   return (
     <Section
       id="priser"
@@ -35,7 +39,7 @@ const Pricing = () => {
           </div>
 
           <div className="pricing__cta">
-            <ButtonHighlight href="https://example.com/membership-signup">
+            <ButtonHighlight onClick={handleBliMedlem}>
               Bli Medlem
             </ButtonHighlight>
           </div>
