@@ -1,0 +1,23 @@
+.legal-modal {
+  &__last-updated {
+    color: var(--neutral);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--neutral-light);
+  }
+
+  &__content {
+    // Content styling is handled by Modal.styles.scss
+    // This file can be extended for specific legal modal styling if needed
+  }
+}
+
+[data-theme="dark"] {
+  .legal-modal {
+    &__last-updated {
+      color: var(--neutral-light);
+      border-bottom-color: var(--neutral-dark);
+    }
+  }
+}

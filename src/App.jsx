@@ -6,6 +6,7 @@ import Benefits from "./components/benefits/Benefits";
 import Location from "./components/location/Location";
 import Pricing from "./components/pricing/Pricing";
 import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
 import BackToTop from "./components/backToTop/BackToTop";
 import NvfLogo from "./components/nvfLogo/NvfLogo";
 
@@ -18,6 +19,7 @@ function App() {
       <Location />
       <Pricing />
       <Contact />
+      <Footer />
       <BackToTop />
       <NvfLogo />
     </div>

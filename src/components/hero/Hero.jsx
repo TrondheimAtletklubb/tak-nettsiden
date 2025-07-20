@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   const handleBliMedlem = () => {
-    window.open("https://www.facebook.com/Atletklubben");
+    window.open("https://medlemskap.nif.no/Start/Index/26467");
   };
 
   return (
