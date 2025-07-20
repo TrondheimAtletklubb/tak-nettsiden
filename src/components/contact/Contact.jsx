@@ -82,7 +82,7 @@ const Contact = () => {
     <Section
       id="kontakt"
       className="contact"
-      background="neutral"
+      background="secondary"
       title="Kontakt oss"
       subtitle="Ta kontakt hvis du har spørsmål eller bekymringer. Vi gleder oss til å komme i kontakt med deg."
     >
