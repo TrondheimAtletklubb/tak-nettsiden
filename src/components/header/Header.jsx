@@ -8,7 +8,10 @@ const Header = () => {
     <header className="header">
       <div className="header__logo-section">
         <img src={logo} alt="TAK Logo" className="header__logo" />
-        <h1 className="header__title">TRONDHEIM ATLETKLUBB</h1>
+        <div className="header__title-group">
+          <h1 className="header__title">TRONDHEIM ATLETKLUBB</h1>
+          <p className="header__subtitle">Olympisk vektløfting</p>
+        </div>
       </div>
       <div className="header__controls">
         <Navigation />
