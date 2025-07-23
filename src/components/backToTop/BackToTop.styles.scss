@@ -48,7 +48,7 @@
   }
 
   @media (max-width: 768px) {
-    bottom: calc(var(--spacing-3xl) + var(--spacing-xl)); /* Lower position to avoid footer overlap */
+    bottom: var(--spacing-lg);
     right: var(--spacing-lg);
     width: 44px;
     height: 44px;
