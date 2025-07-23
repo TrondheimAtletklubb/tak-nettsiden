@@ -34,12 +34,12 @@ const Location = () => {
               linkText={takInfoData.epost}
             />
 
-            <InfoCard
+            {/* <InfoCard
               icon="fas fa-phone"
               title="Telefon"
               link={`tel:${takInfoData.telefon.replace(/\s/g, "")}`}
               linkText={takInfoData.telefon}
-            />
+            /> */}
 
             <InfoCard
               icon="fas fa-map-marker-alt"

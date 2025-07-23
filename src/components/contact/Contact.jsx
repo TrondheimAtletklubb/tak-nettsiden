@@ -96,17 +96,17 @@ const Contact = () => {
               linkText={takInfoData.epost}
             />
 
-            <InfoCard
+            {/* <InfoCard
               icon="fas fa-phone"
               title="Telefon"
               content="Ring oss når som helst"
               link={`tel:${takInfoData.telefon.replace(/\\s/g, "")}`}
               linkText={takInfoData.telefon}
-            />
+            /> */}
 
             <InfoCard
               icon="fas fa-map-marker-alt"
-              title="Kontor"
+              title="Sted"
               content={takInfoData.sted}
             />
           </div>
