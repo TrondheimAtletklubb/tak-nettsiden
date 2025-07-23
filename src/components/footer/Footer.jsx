@@ -32,15 +32,6 @@ const Footer = () => {
               {takInfoData.epost}
             </a>
           </div>
-          {/* <div className="footer__contact-item">
-            <i className="fas fa-phone"></i>
-            <a
-              href={`tel:${takInfoData.telefon.replace(/\s/g, "")}`}
-              className="footer__contact-link"
-            >
-              {takInfoData.telefon}
-            </a>
-          </div> */}
           <div className="footer__contact-item">
             <i className="fas fa-map-marker-alt"></i>
             <span className="footer__contact-text">{takInfoData.sted}</span>

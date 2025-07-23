@@ -34,13 +34,6 @@ const Location = () => {
               linkText={takInfoData.epost}
             />
 
-            {/* <InfoCard
-              icon="fas fa-phone"
-              title="Telefon"
-              link={`tel:${takInfoData.telefon.replace(/\s/g, "")}`}
-              linkText={takInfoData.telefon}
-            /> */}
-
             <InfoCard
               icon="fas fa-map-marker-alt"
               title="Sted"
@@ -54,6 +47,24 @@ const Location = () => {
               isClickable={true}
               onClick={handleDirectionsClick}
               className="locations__directions-card"
+            />
+
+            <InfoCard
+              icon="fab fa-facebook"
+              title="Facebook"
+              content="Følg oss på Facebook"
+              link={takInfoData.facebookUrl}
+              linkText={takInfoData.facebook}
+              openInNewTab={true}
+            />
+
+            <InfoCard
+              icon="fab fa-instagram"
+              title="Instagram"
+              content="Følg oss på Instagram"
+              link={takInfoData.instagramUrl}
+              linkText={takInfoData.instagram}
+              openInNewTab={true}
             />
           </div>
 

@@ -109,6 +109,24 @@ const Contact = () => {
               title="Sted"
               content={takInfoData.sted}
             />
+
+            <InfoCard
+              icon="fab fa-facebook"
+              title="Facebook"
+              content="Følg oss på Facebook"
+              link={takInfoData.facebookUrl}
+              linkText={takInfoData.facebook}
+              openInNewTab={true}
+            />
+
+            <InfoCard
+              icon="fab fa-instagram"
+              title="Instagram"
+              content="Følg oss på Instagram"
+              link={takInfoData.instagramUrl}
+              linkText={takInfoData.instagram}
+              openInNewTab={true}
+            />
           </div>
 
           {/* Contact Form */}
