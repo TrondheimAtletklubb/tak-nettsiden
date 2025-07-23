@@ -28,8 +28,8 @@ const Hero = () => {
       <div className="hero__content">
         <h1 className="hero__title">Finn styrken din hos oss</h1>
         <p className="hero__subtitle">
-          Trygt, sosialt og lærerikt treningsmiljø i vektløfting for alle i
-          Trondheims sentrum.
+          Trygt, sosialt og lærerikt treningsmiljø i olympisk vektløfting for
+          alle i Trondheims.
         </p>
         <div className="hero__buttons">
           <ButtonHighlight type="button" onClick={handleBliMedlem}>
