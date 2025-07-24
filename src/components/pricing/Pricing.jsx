@@ -15,7 +15,8 @@ const Pricing = () => {
       className="pricing"
       background="neutral"
       title="Medlemsskap og priser"
-      subtitle="Følgende medlems- og treningskontingenter gjelder for inneværende år:"
+      subtitle="Vi ønsker nye medlemmer og besøkende som har lyst til å prøve sporten,
+        velkommen. Følgende medlems- og treningskontingenter gjelder for inneværende år:"
     >
       <div className="pricing__content">
         <div className="pricing__info">

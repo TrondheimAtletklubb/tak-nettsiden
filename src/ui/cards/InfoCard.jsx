@@ -10,6 +10,7 @@ const InfoCard = ({
   isClickable = false,
   onClick,
   className = "",
+  openInNewTab = false,
 }) => {
   const cardClass = `info-card ${
     isClickable ? "info-card--clickable" : ""
@@ -45,6 +46,8 @@ const InfoCard = ({
           <a
             id="info-card-link"
             href={link}
+            target={openInNewTab ? "_blank" : undefined}
+            rel={openInNewTab ? "noopener noreferrer" : undefined}
             onClick={(e) => isClickable && e.stopPropagation()}
           >
             {linkText}

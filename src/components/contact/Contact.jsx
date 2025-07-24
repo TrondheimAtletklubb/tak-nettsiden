@@ -96,18 +96,36 @@ const Contact = () => {
               linkText={takInfoData.epost}
             />
 
-            <InfoCard
+            {/* <InfoCard
               icon="fas fa-phone"
               title="Telefon"
               content="Ring oss når som helst"
               link={`tel:${takInfoData.telefon.replace(/\\s/g, "")}`}
               linkText={takInfoData.telefon}
-            />
+            /> */}
 
             <InfoCard
               icon="fas fa-map-marker-alt"
-              title="Kontor"
+              title="Sted"
               content={takInfoData.sted}
+            />
+
+            <InfoCard
+              icon="fab fa-facebook"
+              title="Facebook"
+              content="Følg oss på Facebook"
+              link={takInfoData.facebookUrl}
+              linkText={takInfoData.facebook}
+              openInNewTab={true}
+            />
+
+            <InfoCard
+              icon="fab fa-instagram"
+              title="Instagram"
+              content="Følg oss på Instagram"
+              link={takInfoData.instagramUrl}
+              linkText={takInfoData.instagram}
+              openInNewTab={true}
             />
           </div>
 
