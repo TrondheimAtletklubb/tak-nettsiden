@@ -1,4 +1,4 @@
-import logo from "../../assets/logo-tak-transparent.png";
+import logo from "../../assets/logo-tak-transparent.webp";
 import Navigation from "../navigation/Navigation";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import "./Header.styles.scss";

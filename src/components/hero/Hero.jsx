@@ -1,5 +1,5 @@
-import heroImage from "../../assets/tak-juni-2025.jpg";
-import heroImageMobile from "../../assets/lifters.png";
+import heroImage from "../../assets/tak-juni-2025-sm.webp";
+import heroImageMobile from "../../assets/lifters-sm.webp";
 import { ButtonHighlight, ButtonBorder } from "../../ui/buttons";
 import "./Hero.styles.scss";
 
@@ -18,11 +18,17 @@ const Hero = () => {
         src={heroImage}
         alt="Trondheim Atletklubb weightlifting gym interior"
         className="hero__image hero__image--desktop"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
       />
       <img
         src={heroImageMobile}
         alt="Trondheim Atletklubb weightlifters training"
         className="hero__image hero__image--mobile"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
       />
       <div className="hero__overlay"></div>
       <div className="hero__content">
