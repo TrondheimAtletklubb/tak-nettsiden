@@ -11,7 +11,8 @@ const Lifts = () => {
             <div className="lifts__video">
               <video
                 controls
-                preload="metadata"
+                preload="none"
+                loading="lazy"
                 poster={lift.thumbnail || `/images/${lift.id}-poster.jpg`}
                 className="lifts__video-element"
               >
