@@ -1,5 +1,5 @@
 <div align='center'>
- <img src="./src/assets/logo-tak-transparent.png" alt="Trondheim Atletklubb Logo"/>
+ <img src="./src/assets/logo-tak-transparent.webp" alt="Trondheim Atletklubb Logo"/>
 </div>
 
 # Trondheim Atletklubb Nettsiden
