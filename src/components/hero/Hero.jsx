@@ -1,5 +1,5 @@
-import heroImage from "../../assets/tak-juni-2025-sm.WebP";
-import heroImageMobile from "../../assets/lifters-sm.WebP";
+import heroImage from "../../assets/tak-juni-2025-sm.webp";
+import heroImageMobile from "../../assets/lifters-sm.webp";
 import { ButtonHighlight, ButtonBorder } from "../../ui/buttons";
 import "./Hero.styles.scss";
 

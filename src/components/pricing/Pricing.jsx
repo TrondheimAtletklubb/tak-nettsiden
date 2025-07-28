@@ -1,6 +1,6 @@
 import { Section } from "../../ui/sections";
 import { ButtonHighlight } from "../../ui/buttons";
-import takCommunityImage from "../../assets/tak-community-2.WebP";
+import takCommunityImage from "../../assets/tak-community-2.webp";
 import { membershipPricing } from "../../data/pricingData";
 import "./Pricing.styles.scss";
 
