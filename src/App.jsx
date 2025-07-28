@@ -2,6 +2,8 @@ import "./styles/main.scss";
 import "./styles/App.scss";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
+import SportOverview from "./components/sportOverview/SportOverview";
+import Lifts from "./components/lifts/Lifts";
 import Benefits from "./components/benefits/Benefits";
 import Location from "./components/location/Location";
 import Pricing from "./components/pricing/Pricing";
@@ -15,6 +17,8 @@ function App() {
     <div className="app">
       <Header />
       <Hero />
+      <SportOverview />
+      <Lifts />
       <Benefits />
       <Location />
       <Pricing />
