@@ -1,5 +1,5 @@
 import { useState } from "react";
-import nvfLogo from "../../assets/nvf-logo.png";
+import nvfLogo from "../../assets/nvf-logo.WebP";
 import "./NvfLogo.styles.scss";
 
 const NvfLogo = () => {
