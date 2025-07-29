@@ -12,7 +12,7 @@ const SportOverview = () => {
         <div className="sport-overview__description">
           <p>
             Olympisk vektløfting er en kraftsport som består av to løft:
-            <strong> rykk</strong> og <strong>støt</strong>. Sporten krever en
+            <strong> Rykk</strong> og <strong>Støt</strong>. Sporten krever en
             kombinasjon av styrke, teknikk, fleksibilitet og mental fokus.
           </p>
           <p>

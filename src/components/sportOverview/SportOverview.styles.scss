@@ -33,3 +33,14 @@
     }
   }
 }
+
+[data-theme='light'] .sport-overview {
+  &__description {
+    p {
+      color: var(--text-primary-dark);
+    }
+    strong {
+      color: var(--darkest-yellow);
+    }
+  }
+}
