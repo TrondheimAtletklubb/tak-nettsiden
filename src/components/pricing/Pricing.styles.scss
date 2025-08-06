@@ -28,7 +28,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: var(--spacing-lg);
-    background: var(--neutral-light);
+    background: var(--background-tertiary);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-heavy);
     gap: var(--spacing-md);
@@ -66,7 +66,7 @@
   }
 
   &__access-info {
-    background: var(--neutral-light);
+    background: var(--background-tertiary);
     padding: var(--spacing-lg);
     border-left: 4px solid var(--primary-yellow);
     box-shadow: var(--shadow-heavy);
@@ -116,7 +116,7 @@
 [data-theme="dark"] {
   .pricing {
     &__row {
-      background: var(--neutral-dark);
+      background: var(--background-tertiary);
 
       &:hover {
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
@@ -133,6 +133,7 @@
 
     &__access-info {
       background: var(--neutral-dark);
+      background: var(--background-tertiary);
       border-left-color: var(--primary-yellow);
 
       &:hover {

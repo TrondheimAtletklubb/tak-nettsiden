@@ -13,7 +13,7 @@ const Pricing = () => {
     <Section
       id="priser"
       className="pricing"
-      background="neutral"
+      background="primary"
       title="Medlemsskap og priser"
       subtitle="Vi ønsker nye medlemmer og besøkende som har lyst til å prøve sporten,
         velkommen. Følgende medlems- og treningskontingenter gjelder for inneværende år:"
