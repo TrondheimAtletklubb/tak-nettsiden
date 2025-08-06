@@ -116,7 +116,7 @@
 [data-theme="dark"] {
   .pricing {
     &__row {
-      background: var(--background-tertiary);
+      background: var(--background-neutral-dark);
 
       &:hover {
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
@@ -133,7 +133,7 @@
 
     &__access-info {
       background: var(--neutral-dark);
-      background: var(--background-tertiary);
+      background: var(--background-neutral-dark);
       border-left-color: var(--primary-yellow);
 
       &:hover {

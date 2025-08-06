@@ -2,16 +2,12 @@
   padding: var(--spacing-3xl) 0;
   scroll-margin-top: var(--spacing-3xl);
 
-  &--neutral {
-    background: var(--neutral);
+  &--primary {
+    background: var(--background-primary);
   }
 
   &--secondary {
     background: var(--background-secondary);
-  }
-
-  &--primary {
-    background: var(--background-primary);
   }
 
   &__container {
@@ -56,12 +52,12 @@
 // Dark theme
 [data-theme="dark"] {
   .section {
-    &--neutral {
+    &--primary {
       background: var(--background-primary);
     }
 
     &--secondary {
-      background: var(--neutral-dark);
+      background: var(--background-neutral-dark);
     }
   }
 }
