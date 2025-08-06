@@ -6,7 +6,7 @@ const Benefits = () => {
   return (
     <Section
       className="benefits"
-      background="neutral"
+      background="primary"
       title="Fordeler med Olympisk vektløfting"
     >
       <div className="benefits__grid">
