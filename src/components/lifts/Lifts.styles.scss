@@ -47,7 +47,8 @@
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-xmd);
-    color: var(--primary-yellow);
+
+    color: var(--neutral-darkest);
   }
 
   &__description {
@@ -90,5 +91,11 @@
       font-size: var(--font-size-sm);
       line-height: var(--line-height-normal);
     }
+  }
+}
+
+[data-theme="dark"] .lifts {
+  &__title {
+    color: var(--primary-yellow);
   }
 }

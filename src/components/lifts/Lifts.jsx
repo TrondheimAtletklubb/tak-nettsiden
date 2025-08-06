@@ -4,7 +4,7 @@ import { liftsData } from "../../data/liftsData";
 
 const Lifts = () => {
   return (
-    <Section className="lifts" background="neutral" title="De to løftene">
+    <Section className="lifts" background="secondary" title="De to løftene">
       <div className="lifts__container">
         {liftsData.map((lift) => (
           <figure key={lift.id} className="lifts__figure">
