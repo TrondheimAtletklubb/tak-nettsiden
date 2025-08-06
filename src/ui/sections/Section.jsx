@@ -26,7 +26,7 @@ import "./Section.styles.scss";
 const Section = ({
   id,
   className = "",
-  background = "neutral",
+  background = "primary",
   title,
   subtitle,
   children,
@@ -57,7 +57,6 @@ Section.propTypes = {
   /**
    * Background style variant for the section.
    * Available options:
-   * - 'neutral': Default neutral background
    * - 'secondary': Secondary background color
    * - 'primary': Primary background color
    */
