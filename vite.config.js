@@ -16,6 +16,6 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.js'],
     css: true,
     globals: true,
-    exclude: ['**/node_modules/**', '**/tests/**', '**/*.spec.js']
+    exclude: ['**/node_modules/**', '**/tests/**']
   }
 })
