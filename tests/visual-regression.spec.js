@@ -22,10 +22,7 @@ test.describe("Visual Regression Tests", () => {
 
   test("pricing section should look correct", async ({ page }) => {
     const pricing = page.locator("#priser");
-    await page.evaluate(
-      (element) => element.scrollIntoView(),
-      await pricing.elementHandle()
-    );
+    await pricing.scrollIntoViewIfNeeded();
     await expect(pricing).toHaveScreenshot("pricing-section.png");
   });
 
@@ -53,7 +50,7 @@ test.describe("Visual Regression Tests", () => {
 
     const themeToggle = page.locator('[class*="theme-toggle"]');
     await themeToggle.click();
-    await page.waitForTimeout(500);
+    await page.waitForSelector('html[data-theme="dark"]', { timeout: 5000 });
 
     await expect(page).toHaveScreenshot("dark-theme.png");
   });
