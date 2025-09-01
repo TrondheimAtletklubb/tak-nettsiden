@@ -10,5 +10,12 @@ export default defineConfig({
       localsConvention: 'camelCase',
       generateScopedName: '[name]_[local]__[hash:base64:5]'
     }
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.js'],
+    css: true,
+    globals: true,
+    exclude: ['**/node_modules/**', '**/tests/**', '**/*.spec.js']
   }
 })
