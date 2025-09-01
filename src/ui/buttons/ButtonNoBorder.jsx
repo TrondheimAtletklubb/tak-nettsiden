@@ -1,5 +1,5 @@
 import { IoChevronForward } from "react-icons/io5";
-import "./Button.styles.scss";
+import styles from "./Button.module.scss";
 
 const ButtonNoBorder = ({
   children,
@@ -12,13 +12,13 @@ const ButtonNoBorder = ({
   return (
     <button
       type={type}
-      className={`button button--no-border ${className}`}
+      className={`${styles.button} ${styles['button--no-border']} ${className}`}
       onClick={onClick}
       disabled={disabled}
       {...props}
     >
       {children}
-      <IoChevronForward className="button__arrow" />
+      <IoChevronForward className={styles.button__arrow} />
     </button>
   );
 };

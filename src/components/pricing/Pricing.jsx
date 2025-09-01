@@ -2,7 +2,7 @@ import { Section } from "../../ui/sections";
 import { ButtonHighlight } from "../../ui/buttons";
 import takCommunityImage from "../../assets/tak-community-2.webp";
 import { membershipPricing } from "../../data/pricingData";
-import "./Pricing.styles.scss";
+import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
   const handleBliMedlem = () => {
@@ -12,26 +12,26 @@ const Pricing = () => {
   return (
     <Section
       id="priser"
-      className="pricing"
+      className={styles.pricing}
       background="primary"
       title="Medlemsskap og priser"
       subtitle="Vi ønsker nye medlemmer og besøkende som har lyst til å prøve sporten,
         velkommen. Følgende medlems- og treningskontingenter gjelder for inneværende år:"
     >
-      <div className="pricing__content">
-        <div className="pricing__info">
-          <div className="pricing__table">
+      <div className={styles['pricing__content']}>
+        <div className={styles['pricing__info']}>
+          <div className={styles['pricing__table']}>
             {membershipPricing.map((membership) => (
-              <div key={membership.id} className="pricing__row">
-                <span className="pricing__description">
+              <div key={membership.id} className={styles['pricing__row']}>
+                <span className={styles['pricing__description']}>
                   {membership.description}
                 </span>
-                <span className="pricing__price">{membership.price}</span>
+                <span className={styles['pricing__price']}>{membership.price}</span>
               </div>
             ))}
           </div>
 
-          <div className="pricing__access-info">
+          <div className={styles['pricing__access-info']}>
             <p>
               Ved inngangsdøren til klubben har vi også et nøkkelkortsystem,
               slik at våre medlemmer kan trene når mellom 16.00 og 23.00 på
@@ -39,18 +39,18 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="pricing__cta">
+          <div className={styles['pricing__cta']}>
             <ButtonHighlight onClick={handleBliMedlem}>
               Bli Medlem
             </ButtonHighlight>
           </div>
         </div>
 
-        <div className="pricing__image">
+        <div className={styles['pricing__image']}>
           <img
             src={takCommunityImage}
             alt="Trondheim Atletklubb community"
-            className="pricing__image-img"
+            className={styles['pricing__image-img']}
           />
         </div>
       </div>

@@ -1,13 +1,13 @@
 import { HiSun, HiMoon } from "react-icons/hi";
 import { useTheme } from "../../hooks/useTheme";
-import "./ThemeToggle.styles.scss";
+import styles from "./ThemeToggle.module.scss";
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
-      className="theme-toggle"
+      className={styles['theme-toggle']}
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
     >

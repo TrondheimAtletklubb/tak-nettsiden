@@ -1,7 +1,7 @@
 import { takInfoData } from "../../data/takInfoData";
 import { InfoCard } from "../../ui/cards";
 import { Section } from "../../ui/sections";
-import "./Location.styles.scss";
+import styles from "./Location.module.scss";
 
 const Location = () => {
   const address = takInfoData.sted;
@@ -20,13 +20,13 @@ const Location = () => {
   return (
     <Section
       id="sted"
-      className="locations"
+      className={styles.locations}
       background="secondary"
       title="Finn oss"
       subtitle="Klikk på kartet for å få veibeskrivelse på mobil eller i nettleseren din."
     >
-      <div className="locations__content">
-          <div className="locations__info">
+      <div className={styles['locations__content']}>
+          <div className={styles['locations__info']}>
             <InfoCard
               icon="fas fa-envelope"
               title="E-post"
@@ -46,7 +46,7 @@ const Location = () => {
               content="Få veibeskrivelse direkte til lokalet vårt"
               isClickable={true}
               onClick={handleDirectionsClick}
-              className="locations__directions-card"
+              className={styles['locations__directions-card']}
             />
 
             <InfoCard
@@ -68,9 +68,9 @@ const Location = () => {
             />
           </div>
 
-          <div className="locations__map-container">
+          <div className={styles['locations__map-container']}>
             <div
-              className="locations__map"
+              className={styles['locations__map']}
               onClick={handleMapClick}
               role="button"
               tabIndex="0"
@@ -90,8 +90,8 @@ const Location = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Trondheim Atletklubb Location"
               ></iframe>
-              <div className="locations__map-click-overlay"></div>
-              <div className="locations__map-overlay">
+              <div className={styles['locations__map-click-overlay']}></div>
+              <div className={styles['locations__map-overlay']}>
                 <p>
                   Trykk på kartet for å åpne i Google Maps og få veibeskrivelse
                 </p>

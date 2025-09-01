@@ -1,4 +1,4 @@
-import "./Button.styles.scss";
+import styles from "./Button.module.scss";
 
 const ButtonHighlight = ({
   children,
@@ -11,7 +11,7 @@ const ButtonHighlight = ({
   return (
     <button
       type={type}
-      className={`button button--highlight ${className}`}
+      className={`${styles.button} ${styles['button--highlight']} ${className}`}
       onClick={onClick}
       disabled={disabled}
       {...props}

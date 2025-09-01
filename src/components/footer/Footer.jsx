@@ -2,7 +2,7 @@ import { useState } from "react";
 import { takInfoData } from "../../data/takInfoData";
 import { navigationItems } from "../../data/navigation";
 import LegalModal from "../legalModal/LegalModal";
-import "./Footer.styles.scss";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,32 +18,32 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer__content">
+    <footer className={styles.footer}>
+      <div className={styles['footer__content']}>
         {/* Info Section - TAK Contact Data */}
-        <div className="footer__info">
-          <h3 className="footer__section-title">Kontakt Informasjon</h3>
-          <div className="footer__contact-item">
+        <div className={styles['footer__info']}>
+          <h3 className={styles['footer__section-title']}>Kontakt Informasjon</h3>
+          <div className={styles['footer__contact-item']}>
             <i className="fas fa-envelope"></i>
             <a
               href={`mailto:${takInfoData.epost}`}
-              className="footer__contact-link"
+              className={styles['footer__contact-link']}
             >
               {takInfoData.epost}
             </a>
           </div>
-          <div className="footer__contact-item">
+          <div className={styles['footer__contact-item']}>
             <i className="fas fa-map-marker-alt"></i>
-            <span className="footer__contact-text">{takInfoData.sted}</span>
+            <span className={styles['footer__contact-text']}>{takInfoData.sted}</span>
           </div>
         </div>
 
         {/* Nav Section - Vertical Navigation */}
-        <div className="footer__nav-section">
-          <h3 className="footer__section-title">Navigasjon</h3>
-          <nav className="footer__nav">
+        <div className={styles['footer__nav-section']}>
+          <h3 className={styles['footer__section-title']}>Navigasjon</h3>
+          <nav className={styles['footer__nav']}>
             {navigationItems.map((item) => (
-              <a key={item.id} href={item.href} className="footer__nav-link">
+              <a key={item.id} href={item.href} className={styles['footer__nav-link']}>
                 {item.label}
               </a>
             ))}
@@ -51,14 +51,14 @@ const Footer = () => {
         </div>
 
         {/* Logos Section - Social Media */}
-        <div className="footer__logos">
-          <h3 className="footer__section-title">Følg Oss</h3>
-          <div className="footer__social">
+        <div className={styles['footer__logos']}>
+          <h3 className={styles['footer__section-title']}>Følg Oss</h3>
+          <div className={styles['footer__social']}>
             <a
               href="https://www.facebook.com/Atletklubben"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer__social-link"
+              className={styles['footer__social-link']}
               aria-label="Facebook"
             >
               <i className="fab fa-facebook-f"></i>
@@ -67,7 +67,7 @@ const Footer = () => {
               href="https://www.instagram.com/trondheimak/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer__social-link"
+              className={styles['footer__social-link']}
               aria-label="Instagram"
             >
               <i className="fab fa-instagram"></i>
@@ -76,47 +76,47 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer__bottom">
-        <div className="footer__bottom-content">
-          <div className="footer__bottom-left">
-            <p className="footer__copyright">
+      <div className={styles['footer__bottom']}>
+        <div className={styles['footer__bottom-content']}>
+          <div className={styles['footer__bottom-left']}>
+            <p className={styles['footer__copyright']}>
               © {currentYear} TAK Weightlifting Club. All rights reserved.
             </p>
           </div>
 
-          <div className="footer__bottom-center">
-            <p className="footer__created-by">
+          <div className={styles['footer__bottom-center']}>
+            <p className={styles['footer__created-by']}>
               Powered by:
               <a
                 href="https://solsidentech.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__created-link"
+                className={styles['footer__created-link']}
               >
                 Solsiden Tech Creations
               </a>
             </p>
           </div>
 
-          <div className="footer__bottom-right">
-            <div className="footer__legal">
+          <div className={styles['footer__bottom-right']}>
+            <div className={styles['footer__legal']}>
               <a
                 href="#privacy"
-                className="footer__legal-link"
+                className={styles['footer__legal-link']}
                 onClick={(e) => handleLegalLinkClick(e, "privacyPolicy")}
               >
                 Privacy Policy
               </a>
               <a
                 href="#terms"
-                className="footer__legal-link"
+                className={styles['footer__legal-link']}
                 onClick={(e) => handleLegalLinkClick(e, "termsOfUse")}
               >
                 Terms of Use
               </a>
               <a
                 href="#cookies"
-                className="footer__legal-link"
+                className={styles['footer__legal-link']}
                 onClick={(e) => handleLegalLinkClick(e, "cookiePolicy")}
               >
                 Cookie Policy

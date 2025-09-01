@@ -1,4 +1,4 @@
-import "./InfoCard.styles.scss";
+import styles from "./InfoCard.module.scss";
 
 const InfoCard = ({
   icon,
@@ -12,8 +12,8 @@ const InfoCard = ({
   className = "",
   openInNewTab = false,
 }) => {
-  const cardClass = `info-card ${
-    isClickable ? "info-card--clickable" : ""
+  const cardClass = `${styles['info-card']} ${
+    isClickable ? styles['info-card--clickable'] : ""
   } ${className}`;
 
   const handleClick = () => {
@@ -40,8 +40,8 @@ const InfoCard = ({
       <i className={icon}></i>
       <div>
         <h3>{title}</h3>
-        {subtitle && <p className="info-card__subtitle">{subtitle}</p>}
-        {content && <p className="info-card__content">{content}</p>}
+        {subtitle && <p className={styles['info-card__subtitle']}>{subtitle}</p>}
+        {content && <p className={styles['info-card__content']}>{content}</p>}
         {link && linkText && (
           <a
             id="info-card-link"

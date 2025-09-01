@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./BackToTop.styles.scss";
+import styles from "./BackToTop.module.scss";
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +39,7 @@ const BackToTop = () => {
 
   return (
     <button
-      className={`back-to-top ${isVisible ? "back-to-top--visible" : ""}`}
+      className={`${styles['back-to-top']} ${isVisible ? styles['back-to-top--visible'] : ""}`}
       onClick={scrollToTop}
       aria-label="Scroll to top"
       title="Tilbake til toppen"

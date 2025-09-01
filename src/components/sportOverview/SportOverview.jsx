@@ -1,15 +1,15 @@
-import "./SportOverview.styles.scss";
+import styles from "./SportOverview.module.scss";
 import { Section } from "../../ui/sections";
 
 const SportOverview = () => {
   return (
     <Section
-      className="sport-overview"
+      className={styles['sport-overview']}
       background="primary"
       title="Hva er Olympisk vektløfting?"
     >
-      <div className="sport-overview__content">
-        <div className="sport-overview__description">
+      <div className={styles['sport-overview__content']}>
+        <div className={styles['sport-overview__description']}>
           <p>
             Olympisk vektløfting er en kraftsport som består av to løft:
             <strong> Rykk</strong> og <strong>Støt</strong>. Sporten krever en
