@@ -1,6 +1,6 @@
 import { Modal } from "../../ui/modal";
 import { legalContent } from "../../data/legalContent";
-import "./LegalModal.styles.scss";
+import styles from "./LegalModal.module.scss";
 
 const LegalModal = ({ isOpen, onClose, contentType }) => {
   if (!contentType || !legalContent[contentType]) {
@@ -79,11 +79,11 @@ const LegalModal = ({ isOpen, onClose, contentType }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={content.title} size="large">
-      <div className="legal-modal">
-        <p className="legal-modal__last-updated">
+      <div className={styles['legal-modal']}>
+        <p className={styles['legal-modal__last-updated']}>
           <em>{content.lastUpdated}</em>
         </p>
-        <div className="legal-modal__content">
+        <div className={styles['legal-modal__content']}>
           {formatContent(content.content)}
         </div>
       </div>

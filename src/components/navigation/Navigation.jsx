@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { navigationItems } from "../../data/navigation";
-import "./Navigation.styles.scss";
+import styles from "./Navigation.module.scss";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,14 +19,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="navigation">
-      <ul className="navigation__menu navigation__menu--desktop">
+    <nav className={styles.navigation}>
+      <ul className={`${styles.navigation__menu} ${styles['navigation__menu--desktop']}`}>
         {navigationItems.map((item) => (
-          <li key={item.id} className="navigation__item">
+          <li key={item.id} className={styles.navigation__item}>
             <a
               href={item.href}
-              className={`navigation__link ${
-                activeItem === item.label ? "navigation__link--active" : ""
+              className={`${styles.navigation__link} ${
+                activeItem === item.label ? styles['navigation__link--active'] : ""
               }`}
               onClick={() => handleMenuItemClick(item)}
             >
@@ -38,7 +38,7 @@ const Navigation = () => {
 
       {/* Mobile Burger Button */}
       <button
-        className="navigation__burger"
+        className={styles.navigation__burger}
         onClick={toggleMenu}
         aria-label="Toggle navigation menu"
         aria-expanded={isMenuOpen}
@@ -47,16 +47,16 @@ const Navigation = () => {
       </button>
 
       <ul
-        className={`navigation__menu navigation__menu--mobile ${
-          isMenuOpen ? "navigation__menu--open" : ""
+        className={`${styles.navigation__menu} ${styles['navigation__menu--mobile']} ${
+          isMenuOpen ? styles['navigation__menu--open'] : ""
         }`}
       >
         {navigationItems.map((item) => (
-          <li key={item.id} className="navigation__item">
+          <li key={item.id} className={styles.navigation__item}>
             <a
               href={item.href}
-              className={`navigation__link ${
-                activeItem === item.label ? "navigation__link--active" : ""
+              className={`${styles.navigation__link} ${
+                activeItem === item.label ? styles['navigation__link--active'] : ""
               }`}
               onClick={() => handleMenuItemClick(item)}
             >

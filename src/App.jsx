@@ -1,5 +1,5 @@
 import "./styles/main.scss";
-import "./styles/App.scss";
+import styles from "./styles/App.module.scss";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import SportOverview from "./components/sportOverview/SportOverview";
@@ -14,7 +14,7 @@ import NvfLogo from "./components/nvfLogo/NvfLogo";
 
 function App() {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header />
       <Hero />
       <SportOverview />

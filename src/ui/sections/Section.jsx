@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./Section.styles.scss";
+import styles from "./Section.module.scss";
 
 /**
  * A reusable section component that provides consistent layout and styling
@@ -35,12 +35,12 @@ const Section = ({
   return (
     <section
       id={id}
-      className={`section section--${background} ${className}`}
+      className={`${styles.section} ${styles[`section--${background}`]} ${className}`}
       {...props}
     >
-      <div className="section__container">
-        {title && <h2 className="section__title">{title}</h2>}
-        {subtitle && <p className="section__subtitle">{subtitle}</p>}
+      <div className={styles['section__container']}>
+        {title && <h2 className={styles['section__title']}>{title}</h2>}
+        {subtitle && <p className={styles['section__subtitle']}>{subtitle}</p>}
         {children}
       </div>
     </section>

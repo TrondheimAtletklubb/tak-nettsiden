@@ -1,4 +1,4 @@
-import "./Button.styles.scss";
+import styles from "./Button.module.scss";
 
 const ButtonBorder = ({
   children,
@@ -11,7 +11,7 @@ const ButtonBorder = ({
   return (
     <button
       type={type}
-      className={`button button--border ${className}`}
+      className={`${styles.button} ${styles['button--border']} ${className}`}
       onClick={onClick}
       disabled={disabled}
       {...props}

@@ -5,7 +5,7 @@ import { takInfoData } from "../../data/takInfoData";
 import { InfoCard } from "../../ui/cards";
 import { ButtonHighlight } from "../../ui/buttons";
 import { Section } from "../../ui/sections";
-import "./Contact.styles.scss";
+import styles from "./Contact.module.scss";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -81,13 +81,13 @@ const Contact = () => {
   return (
     <Section
       id="kontakt"
-      className="contact"
+      className={styles.contact}
       background="secondary"
       title="Kontakt oss"
       subtitle="Ta kontakt hvis du har spørsmål eller bekymringer. Vi gleder oss til å komme i kontakt med deg."
     >
-      <div className="contact__content">
-          <div className="contact__info">
+      <div className={styles['contact__content']}>
+          <div className={styles['contact__info']}>
             <InfoCard
               icon="fas fa-envelope"
               title="E-post"
@@ -130,10 +130,10 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="contact__form-wrapper">
-            <form onSubmit={handleSubmit} className="contact__form">
-              <div className="contact__form-row">
-                <div className="contact__form-group">
+          <div className={styles['contact__form-wrapper']}>
+            <form onSubmit={handleSubmit} className={styles['contact__form']}>
+              <div className={styles['contact__form-row']}>
+                <div className={styles['contact__form-group']}>
                   <label htmlFor="firstName">Fornavn</label>
                   <input
                     type="text"
@@ -145,7 +145,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="contact__form-group">
+                <div className={styles['contact__form-group']}>
                   <label htmlFor="lastName">Etternavn</label>
                   <input
                     type="text"
@@ -158,7 +158,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="contact__form-group">
+              <div className={styles['contact__form-group']}>
                 <label htmlFor="email">E-post</label>
                 <input
                   type="email"
@@ -170,7 +170,7 @@ const Contact = () => {
                 />
               </div>
 
-              <div className="contact__form-group">
+              <div className={styles['contact__form-group']}>
                 <label htmlFor="subject">Emne</label>
                 <input
                   type="text"
@@ -182,7 +182,7 @@ const Contact = () => {
                 />
               </div>
 
-              <div className="contact__form-group">
+              <div className={styles['contact__form-group']}>
                 <label htmlFor="message">Melding</label>
                 <textarea
                   id="message"
@@ -196,7 +196,7 @@ const Contact = () => {
               </div>
 
               {/* reCAPTCHA */}
-              <div className="contact__form-group contact__captcha">
+              <div className={`${styles['contact__form-group']} ${styles.contact__captcha}`}>
                 <ReCAPTCHA
                   ref={recaptchaRef}
                   sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
@@ -213,21 +213,21 @@ const Contact = () => {
               </ButtonHighlight>
 
               {submitStatus === "success" && (
-                <div className="contact__message contact__message--success">
+                <div className={`${styles.contact__message} ${styles['contact__message--success']}`}>
                   <i className="fas fa-check-circle"></i>
                   Takk for din melding! Vi kommer tilbake til deg snart.
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="contact__message contact__message--error">
+                <div className={`${styles.contact__message} ${styles['contact__message--error']}`}>
                   <i className="fas fa-exclamation-circle"></i>
                   Noe gikk galt. Vennligst prøv igjen eller kontakt oss direkte.
                 </div>
               )}
 
               {submitStatus === "captcha_error" && (
-                <div className="contact__message contact__message--error">
+                <div className={`${styles.contact__message} ${styles['contact__message--error']}`}>
                   <i className="fas fa-exclamation-circle"></i>
                   Vennligst bekreft at du ikke er en robot ved å fylle ut reCAPTCHA.
                 </div>
