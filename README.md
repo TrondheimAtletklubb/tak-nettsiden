@@ -22,3 +22,40 @@ Denne nettsiden gir informasjon om Trondheim Atletklubb. Fase én viser:
 - Vite/ReactJS
 - Sass
 - Github-sider
+
+## Testing
+
+Prosjektet har to typer tester:
+
+### Komponent-tester (Vitest)
+Tester individuelle React-komponenter:
+
+```bash
+# Kjør tester i watch-modus
+yarn test:unit
+
+# Kjør tester én gang
+yarn test:unit:run
+
+# Kjør tester med UI
+yarn test:unit:ui
+```
+
+### Visuell regresjonstesting (Playwright)
+Tester at UI-et ser riktig ut på tvers av nettlesere:
+
+```bash
+# Kjør alle visuelle tester
+yarn test
+
+# Kjør tester med synlig nettleser
+yarn test:headed
+
+# Kjør tester med UI
+yarn test:ui
+
+# Oppdater snapshots etter endringer
+yarn test --update-snapshots
+```
+
+**Merk:** Når du endrer styling eller layout, må du oppdatere snapshots ved å kjøre `yarn test --update-snapshots` for å unngå at testene feiler.
