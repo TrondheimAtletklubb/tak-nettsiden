@@ -13,7 +13,7 @@ vi.mock('@emailjs/browser', () => ({
 
 // Mock ReCAPTCHA
 vi.mock('react-google-recaptcha', () => ({
-  default: vi.fn(({ onChange, onExpired, onErrored }) => (
+  default: vi.fn(({ onChange }) => (
     <div data-testid="mock-recaptcha">
       <button
         type="button"
