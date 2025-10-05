@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "playwright test",
+    "test:update-snpshts": "playwright test --update-snapshots",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "test:unit": "vitest",
