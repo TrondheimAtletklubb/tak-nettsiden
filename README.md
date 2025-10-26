@@ -4,7 +4,7 @@
 
 # Trondheim Atletklubb Nettsiden
 
-[Besøk nettsiden](https://trondheimatletklubb.github.io/tak-nettsiden/)
+[Besøk nettsiden](atletklubben.no)
 
 ## Summary
 
