@@ -4,7 +4,7 @@
 
 # Trondheim Atletklubb Nettsiden
 
-[Besøk nettsiden](atletklubben.no)
+[Besøk atletklubben.no](https://atletklubben.no/)
 
 ## Summary
 
