@@ -88,12 +88,12 @@ const Footer = () => {
             <p className={styles['footer__created-by']}>
               Powered by:
               <a
-                href="https://solsidentech.com"
+                href="https://fyrkode.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles['footer__created-link']}
               >
-                Solsiden Tech Creations
+                FyrKode Studio
               </a>
             </p>
           </div>
