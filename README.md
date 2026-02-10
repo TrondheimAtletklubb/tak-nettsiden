@@ -23,6 +23,36 @@ Denne nettsiden gir informasjon om Trondheim Atletklubb. Fase én viser:
 - Sass
 - Github-sider
 
+## Oppsett
+
+Dette prosjektet bruker Yarn som pakkebehandler via Node.js Corepack.
+
+### Forutsetninger
+- Node.js 24.12.0 eller høyere
+- Corepack aktivert
+
+### Installasjon
+
+1. Sørg for at du har riktig Node.js-versjon:
+```bash
+node --version  # Skal være v24.12.0 eller høyere
+```
+
+2. Aktiver Corepack (hvis ikke allerede aktivert):
+```bash
+corepack enable
+```
+
+3. Installer avhengigheter:
+```bash
+yarn install
+```
+
+4. Start utviklingsserveren:
+```bash
+yarn dev
+```
+
 ## Testing
 
 Prosjektet har to typer tester:
